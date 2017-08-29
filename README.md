@@ -25,6 +25,8 @@ For Distributed Shell you can add different group later on (e.g., NFS server gro
 
 Finally, both Distributed Shell with Bitvise SSH Server are in place then we could submit some powershell commmand to control or monitor multiple windows servers.
 
+e.g.,Get error and warning entries from all remote computer on a certain day and order by the source
+
 ```bash
 bash-3.2# dsh -g testMachines 'Get-EventLog -LogName System -After "08/27/2017" -Before "08/29/2017" | Where-Object {$_.EntryType -like "Error" -or $_.EntryType -like "Warning"} | Sort-Object Source '
 192.168.133.21: 
@@ -55,6 +57,3 @@ bash-3.2# dsh -g testMachines 'Get-WmiObject -Class Win32_ComputerSystem -Proper
 192.168.133.22: UserName         : yen-PC2\yen
 ```
 
-```bash
-
-```
