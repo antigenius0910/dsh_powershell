@@ -23,42 +23,25 @@ bash-3.2# cat ~/.dsh/group/testMachines
 
 For Distributed Shell you can add different group later on (e.g., NFS server group, workstation group, Domain controller group...) in order to separately control your servers group by group. By using dsh we can then quicky submit Linux command to Linux server farm and Windows command to Windows server farm without interference with each other.
 
-Finally, both Distributed Shell with Bitvise SSH Server are in place then we could submit some powershell commmand to control multiple windows servers.
+Finally, both Distributed Shell with Bitvise SSH Server are in place then we could submit some powershell commmand to control or monitor multiple windows servers.
 
 ```bash
-bash-3.2# dsh -g testMachines 'Get-EventLog system -newest 1| Format-List' 
+bash-3.2# dsh -g testMachines 'Get-EventLog -LogName System -After "08/27/2017" -Before "08/29/2017" | Where-Object {$_.EntryType -like "Error" -or $_.EntryType -like "Warning"} | Sort-Object Source '
 192.168.133.21: 
-192.168.133.21: 
-192.168.133.21: Index              : 1345
-192.168.133.21: EntryType          : Information
-192.168.133.21: InstanceId         : 1073748860
-192.168.133.21: Message            : The Application Experience service entered the stopped sta
-192.168.133.21:                      te.
-192.168.133.21: Category           : (0)
-192.168.133.21: CategoryNumber     : 0
-192.168.133.21: ReplacementStrings : {Application Experience, stopped}
-192.168.133.21: Source             : Service Control Manager
-192.168.133.21: TimeGenerated      : 8/28/2017 10:15:01 PM
-192.168.133.21: TimeWritten        : 8/28/2017 10:15:01 PM
-192.168.133.21: UserName           : 
-192.168.133.21: 
+192.168.133.21:    Index Time          EntryType   Source                 InstanceID Message   
+192.168.133.21:    ----- ----          ---------   ------                 ---------- -------   
+192.168.133.21:     1313 Aug 28 21:38  Error       BTHUSB                 3221553158 The add...
+192.168.133.21:     1314 Aug 28 21:38  Error       BTHUSB                 3221553169 The loc...
 192.168.133.21: 
 192.168.133.21: 
 192.168.133.22: 
-192.168.133.22: 
-192.168.133.22: Index              : 1228
-192.168.133.22: EntryType          : Information
-192.168.133.22: InstanceId         : 1073748860
-192.168.133.22: Message            : The Application Experience service entered the stopped sta
-192.168.133.22:                      te.
-192.168.133.22: Category           : (0)
-192.168.133.22: CategoryNumber     : 0
-192.168.133.22: ReplacementStrings : {Application Experience, stopped}
-192.168.133.22: Source             : Service Control Manager
-192.168.133.22: TimeGenerated      : 8/28/2017 10:15:02 PM
-192.168.133.22: TimeWritten        : 8/28/2017 10:15:02 PM
-192.168.133.22: UserName           : 
-192.168.133.22: 
+192.168.133.22:    Index Time          EntryType   Source                 InstanceID Message   
+192.168.133.22:    ----- ----          ---------   ------                 ---------- -------   
+192.168.133.22:      883 Aug 28 20:40  Error       bowser                 3221233475 The mas...
+192.168.133.22:     1190 Aug 28 21:38  Error       BTHUSB                 3221553169 The loc...
+192.168.133.22:     1189 Aug 28 21:38  Error       BTHUSB                 3221553158 The add...
+192.168.133.22:      322 Aug 27 13:52  Warning     Microsoft-Windows...          219 The des...
+192.168.133.22:      822 Aug 27 19:16  Warning     Tcpip                  2147487876 TCP/IP ...
 192.168.133.22: 
 192.168.133.22: 
 
