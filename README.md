@@ -8,4 +8,4 @@ After research, I've found Distributed Shell with Bitvise SSH Server might just 
 First, we spin up two Win7 VMs.
 ![screen shot 2017-08-27 at 2 54 49 pm](https://user-images.githubusercontent.com/5915590/29803140-88e5ae60-8c3f-11e7-9006-0ce29cb424fb.png)
 
-First, we follow [dsh - distributed shell on Mac OSX](http://michaelmasters.blogspot.com/2009/11/dsh-distributed-shell-on-mac-osx.html) and install dsh on my Mac. 
+Second, we follow [dsh - distributed shell on Mac OSX](http://michaelmasters.blogspot.com/2009/11/dsh-distributed-shell-on-mac-osx.html) and install dsh on my Mac. 
