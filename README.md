@@ -64,6 +64,14 @@ bash-3.2# dsh -g testMachines 'Get-EventLog system -newest 1| Format-List'
 
 ```
 
+We can also mix windows powershell command with liunx command together.
+
+```bash
+bash-3.2# dsh -g testMachines 'Get-WmiObject -Class Win32_ComputerSystem -Property UserName -ComputerName .' | grep -i UserName
+192.168.133.21: UserName         : yen-PC1\yen
+192.168.133.22: UserName         : yen-PC2\yen
+```
+
 ```bash
 
 ```
