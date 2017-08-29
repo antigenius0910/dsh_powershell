@@ -10,8 +10,6 @@ First, we spin up two Win7 VMs.
 
 Second, we need to have ssh server running on our Win7 VMs, [Bitvise SSH Server](https://www.bitvise.com/ssh-server) seems like a great choice since it has the ability to let us gain a powershell in stead of cmd.exe. After install, we import our RSA.pub into Bitvise SSH Server as follow. 
 
-
-
-
+![screen shot 2017-08-28 at 10 34 22 pm](https://user-images.githubusercontent.com/5915590/29803413-3ee21fae-8c41-11e7-985c-b52afc1a2c44.png)
 
 , we follow [dsh - distributed shell on Mac OSX](http://michaelmasters.blogspot.com/2009/11/dsh-distributed-shell-on-mac-osx.html) and install dsh on my Mac. Make sure we have all the Win7 VM's ip in ~/.dsh/group/testMachines 
