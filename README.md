@@ -58,4 +58,4 @@ bash-3.2# dsh -g testMachines 'Get-WmiObject -Class Win32_ComputerSystem -Proper
 ```
 
 In conclusion, now we are able to control multiple Windows machines through powershell and mix it with Linux commands in order to 
-maximise deployment and monitoring time.
+minimise deployment and monitoring time.
